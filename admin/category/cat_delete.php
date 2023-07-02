@@ -1,5 +1,5 @@
 <?php
-    include("confs/config.php");
+    include("../confs/config.php");
     $id = $_GET['id'];
     $sql = "DELETE FROM tbl_category WHERE id = $id";
     mysqli_query($conn, $sql);

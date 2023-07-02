@@ -8,7 +8,7 @@
 <body>
     <h1>Category List</h1>
     <?php
-        include("confs/config.php");
+        include("../confs/config.php");
         $result = mysqli_query($conn, "SELECT * FROM tbl_category");
     ?>
     <ul class="list">

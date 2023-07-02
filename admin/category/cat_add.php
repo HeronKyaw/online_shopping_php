@@ -1,5 +1,5 @@
 <?php
-    include("confs/config.php");
+    include("../confs/config.php");
 
     $name = $_POST['name'];
     $remark = $_POST['remark'];
