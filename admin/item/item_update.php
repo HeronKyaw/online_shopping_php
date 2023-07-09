@@ -1,6 +1,7 @@
 <?php
     include("../confs/config.php");
 
+    $id = $_POST['id'];
     $title = $_POST['title'];
     $brand = $_POST['brand'];
     $review = $_POST['review'];
@@ -12,9 +13,11 @@
 
     if($photo) {
         move_uploaded_file($tmp, "../image/$photo");
+        $sql = "UPDATE tbl_item SET title='$title', photo='$photo', category_id='$category_id', brand='$brand' , review='$review', price='$price', reached_date=now(), expired_date='$expired_date' WHERE id='$id'";
+    } else {
+        $sql = "UPDATE tbl_item SET title='$title', category_id='$category_id', brand='$brand' , review='$review', price='$price', reached_date=now(), expired_date='$expired_date' WHERE id='$id'";
     }
 
-    $sql = "INSERT INTO tbl_item (title, brand, review, price, photo, category_id, reached_date, expired_date) VALUES ('$title', '$brand', '$review', '$price', '$photo', '$category_id', now(), '$expired_date')";
     mysqli_query($conn, $sql);
     header("location: item_list.php");
 ?>
