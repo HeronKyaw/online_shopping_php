@@ -14,15 +14,17 @@
     <ul class="list">
         <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <li>
-                <img src="../image/<?php echo $row['photo'] ?>" alt="" align="right" height="140">
-                <b><?php echo $row['title'] ?></b>
-                <i>by <?php echo $row['brand'] ?></i>
-                <small>(in <?php echo $row['name'] ?>)</small>
-                <span>$<?php echo $row['price'] ?></span>
-                <div><?php echo $row['review'] ?></div>
-
-                [<a href="item_delete.php?id=<?php echo $row['id'] ?>" onClick="return confirm('Are you sure?')">Delete</a>]
-                [<a href="item_edit.php?id=<?php echo $row['id'] ?>">Edit</a>]
+                <div>
+                    <img src="../image/items/<?php echo $row['photo'] ?>" alt="" align="right" height="140">
+                    <b><?php echo $row['title'] ?></b>
+                    <i>by <?php echo $row['brand'] ?></i>
+                    <small>(in <?php echo $row['name'] ?>)</small>
+                    <span>$<?php echo $row['price'] ?></span>
+                    <div><?php echo $row['review'] ?></div>
+    
+                    [<a href="item_delete.php?id=<?php echo $row['id'] ?>" onClick="return confirm('Are you sure?')">Delete</a>]
+                    [<a href="item_edit.php?id=<?php echo $row['id'] ?>">Edit</a>]
+                </div>
             </li>
         <?php endwhile; ?>
     </ul>
