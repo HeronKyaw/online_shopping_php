@@ -32,32 +32,35 @@ $cats = mysqli_query($conn, "SELECT * FROM tbl_category");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shop</title>
+    <link rel="stylesheet" href="./style/main.css">
 </head>
 
 <body>
-    <h1 id="title" style="font-family: 'Courier New', Courier, monospace;">Online Shop</h1>
-    <div class="admininfo">
-        <a href="admin/auth/login.php" style="font-family:'Courier New', Courier, monospace;">Admin Login</a>
-    </div>
-    <div class="info">
-        <a href="view-cart.php">
-            (<?php echo $cart ?>) items in your cart
-        </a>
-    </div>
-    <div class="sidebar">
-        <ul class="cats">
-            <li>
-                <b><a href="index.php">All Items</a></b>
-            </li>
-            <?php while ($row = mysqli_fetch_assoc($cats)) : ?>
+    <nav>
+        <h1 id="title" style="font-family: 'Courier New', Courier, monospace;">Online Shop</h1>
+        <div class="admininfo">
+            <a href="admin/auth/login.php" style="font-family:'Courier New', Courier, monospace;">Admin Login</a>
+        </div>
+        <div class="info">
+            <a href="view-cart.php">
+                (<?php echo $cart ?>) items in your cart
+            </a>
+        </div>
+        <div class="sidebar">
+            <ul class="cats">
                 <li>
-                    <a href="index.php?cat=<?php echo $row['id'] ?>">
-                        <?php echo $row['name'] ?>
-                    </a>
+                    <b><a href="index.php">All Items</a></b>
                 </li>
-            <?php endwhile; ?>
-        </ul>
-    </div>
+                <?php while ($row = mysqli_fetch_assoc($cats)) : ?>
+                    <li>
+                        <a href="index.php?cat=<?php echo $row['id'] ?>">
+                            <?php echo $row['name'] ?>
+                        </a>
+                    </li>
+                <?php endwhile; ?>
+            </ul>
+        </div>        
+    </nav>
 
     <div class="main">
         <ul class="items">
