@@ -1,3 +1,12 @@
 # ignore .idea and .vscode
 .idea
 .vscode
+
+# ignore .DS_Store
+.DS_Store
+
+# ignore .env
+.env
+
+# ignore node_modules
+node_modules
