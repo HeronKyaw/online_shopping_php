@@ -1,3 +1,99 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-bar {
+    @apply p-4 flex justify-between items-center bg-slate-200;
+}
+.nav-btn {
+    @apply flex justify-between;
+}
+.auth-btn {
+    @apply flex justify-between items-center;
+}
+.auth-btn > * {
+    @apply w-fit mx-2;
+}
+.auth-btn > .login-btn {
+    @apply bg-violet-500 px-3 py-1 rounded-lg text-white hover:bg-violet-400;
+}
+.auth-btn > .sign-up-btn {
+    @apply bg-violet-500 px-3 py-1 rounded-lg text-white hover:bg-violet-400;
+}
+.sidebar {
+    @apply w-48;
+}
+.sidebar > .cats {
+    @apply my-3;
+}
+.sidebar .sidebar-items {
+    @apply px-3 py-2 bg-violet-500 my-1 rounded text-white hover:bg-violet-400;
+}
+
+/* Login Page */
+.login-bg {
+    @apply bg-gray-50 dark:bg-gray-900;
+}
+.login-body {
+    @apply flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0;
+}
+.login-card {
+    @apply w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700;
+}
+.login-card-body {
+    @apply p-6 space-y-4 md:space-y-6 sm:p-8;
+}
+.login-title {
+    @apply text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white;
+}
+.login-alert-banner {
+    @apply flex items-center p-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800;
+}
+.banner-icon {
+    @apply flex-shrink-0 inline w-4 h-4 mr-3;
+}
+.icon-sr {
+    @apply sr-only;
+}
+.banner-title {
+    @apply font-medium;
+}
+.login-form {
+    @apply space-y-4 md:space-y-6;
+}
+.input-title {
+    @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+}
+.input-field {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+}
+.action-box {
+    @apply flex items-center justify-between;
+}
+.remember-me-box {
+    @apply flex items-start;
+}
+.rem-cb-container {
+    @apply flex items-center h-5;
+}
+.rem-cb {
+    @apply w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800;
+}
+.rem-text-container {
+    @apply ml-3 text-sm;
+}
+.rem-text {
+    @apply text-gray-500 dark:text-gray-300;
+}
+.fg-psw {
+    @apply text-sm font-medium text-primary-600 hover:underline dark:text-primary-500;
+}
+.sign-in-form-btn {
+    @apply w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800;
+}
+.signup-action {
+    @apply text-sm font-light text-gray-500 dark:text-gray-400;
+}
+.signup-text {
+    @apply font-medium text-primary-600 hover:underline dark:text-primary-500;
+}

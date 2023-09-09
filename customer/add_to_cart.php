@@ -2,5 +2,5 @@
     session_start();
     $id = $_GET['id'];
     $_SESSION['cart'][$id]++;
-    header("location: index.php");
+    header("location: ../index.php");
 ?>

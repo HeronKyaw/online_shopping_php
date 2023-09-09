@@ -1,5 +1,5 @@
 <?php
-    include("../confs/config.php");
+    include("../../confs/config.php");
 
     $title = $_POST['title'];
     $brand = $_POST['brand'];
@@ -11,7 +11,7 @@
     $expired_date = date('Y-m-d H:i:s', strtotime("+3 months", strtotime("now")));
 
     if($photo) {
-        move_uploaded_file($tmp, "../image/items/$photo");
+        move_uploaded_file($tmp, "../../storage/upload/$photo");
     }
 
     $sql = "INSERT INTO tbl_item (title, brand, review, price, photo, category_id, reached_date, expired_date) VALUES ('$title', '$brand', '$review', '$price', '$photo', '$category_id', now(), '$expired_date')";

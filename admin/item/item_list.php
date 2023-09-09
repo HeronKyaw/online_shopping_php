@@ -1,5 +1,5 @@
 <?php
-    include("../confs/config.php");
+    include("../../confs/config.php");
     $result = mysqli_query($conn, "SELECT tbl_item.*, tbl_category.name FROM tbl_item LEFT JOIN tbl_category ON tbl_item.category_id = tbl_category.id ORDER BY tbl_item.reached_date DESC");
 ?>
 <!DOCTYPE html>

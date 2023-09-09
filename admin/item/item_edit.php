@@ -1,5 +1,5 @@
 <?php
-    include("../confs/config.php");
+    include("../../confs/config.php");
 
     $id = $_GET['id'];
     $result = mysqli_query($conn, "SELECT * FROM tbl_item WHERE id = $id");
@@ -36,7 +36,7 @@
         <select name="category_id" id="category_id">
             <option value="0">-- Choose --</option>
             <?php
-                include("../confs/config.php");
+                include("../../confs/config.php");
                 $sql = "SELECT id, name FROM tbl_category";
                 $categories = mysqli_query($conn, $sql);
                 while($cat = mysqli_fetch_assoc($categories)) {

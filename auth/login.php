@@ -1,10 +1,24 @@
 <?php
     session_start();
-    $name = $_POST['name'];
+    include ('../confs/config.php');
+    $usernameOrEmail = $_POST['nameOrEmail'];
     $password = $_POST['password'];
-    if ($name == 'admin' and $password == '12345') {
-        $_SESSION['auth'] = true;
-        header("location: ../welcomeadmin.php");
+    $query = mysqli_query($conn, "SELECT username, password, email, isAdmin FROM tbl_users WHERE username = '$usernameOrEmail' OR email = '$usernameOrEmail'");
+    $info = mysqli_fetch_assoc($query);
+    if ($info !== null) {
+        if ($info['password'] == $password) {
+            $_SESSION['auth'] = true;
+            $_SESSION['username'] = $info['username'];
+            $_SESSION['email'] = $info['email'];
+            $_SESSION['isAdmin'] = $info['isAdmin'];
+            if ($info['isAdmin']) {
+                header("location: ../other/admin_or_normal_login.php");
+            } else {
+                header("location: ../index.php");
+            }
+        } else {
+            header("location: ../admin/index.php?login=failed");
+        }
     } else {
-        header("location: ../index.php");
+        header("location: ../admin/index.php?login=not-found");
     }

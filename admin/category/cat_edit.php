@@ -8,7 +8,7 @@
 <body>
     <h1>Edit Category</h1>
     <?php
-        include("../confs/config.php");
+        include("../../confs/config.php");
         $id = $_GET['id'];
         $result = mysqli_query($conn, "SELECT * FROM tbl_category WHERE id = $id");
         $row = mysqli_fetch_assoc($result);

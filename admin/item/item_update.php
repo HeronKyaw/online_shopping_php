@@ -1,5 +1,5 @@
 <?php
-    include("../confs/config.php");
+    include("../../confs/config.php");
 
     $id = $_POST['id'];
     $title = $_POST['title'];

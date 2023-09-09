@@ -1,28 +1,23 @@
 <?php
-    include("../confs/config.php");
-    $cats = mysqli_query($conn, "SELECT * FROM tbl_category");
+include("./confs/config.php");
+$cats = mysqli_query($conn, "SELECT * FROM tbl_category ORDER BY name");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shop With Me</title>
-    <link rel="stylesheet" href="../resources/style/main.css">
-</head>
-<body>
-    <aside class="sidebar w-40 px-4">
-        <ul class="cats">
+
+<aside id="default-sidebar" class="sidebar z-40 pt-4 w-64 transition-transform bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 flex flex-col justify-between">
+        <ul class="space-y-2 font-medium">
             <li>
-                <b><a href="index.php">All Items</a></b>
+                <a href="index.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <span class="ml-3">All Items</span>
+                </a>
             </li>
             <?php while ($row = mysqli_fetch_assoc($cats)) : ?>
                 <li>
-                    <a href="index.php?cat=<?php echo $row['id'] ?>">
-                        <?php echo $row['name'] ?>
+                    <a href="index.php?cat=<?php echo $row['id'] ?>" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <span class="ml-3"><?php echo $row['name'] ?></span>
                     </a>
                 </li>
             <?php endwhile; ?>
         </ul>
-    </aside>
-</body>
-</html>
+    </div>
+</aside>

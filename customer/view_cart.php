@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION['cart'])) {
-    header("location: index.php");
+    header("location: ../index.php");
     exit();
 }
-include("admin/confs/config.php");
+include("../confs/config.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +20,11 @@ include("admin/confs/config.php");
     <h1>View Cart</h1>
     <div class="sidebar">
         <ul class="cats">
-            <li><a href="index.php">&laquo; Continue Shopping</a></li>
-            <li><a href="claer_cart.php" class="del">&times; Clear Cart</a></li>
+            <li><a href="../index.php">&laquo; Continue Shopping</a></li>
+            <li><a href="./clear_cart.php" class="del">&times; Clear Cart</a></li>
         </ul>
     </div>
-    <div class="main">
+    <div class="cart">
         <table>
             <tr>
                 <th>Item Name</th>
@@ -70,7 +70,7 @@ include("admin/confs/config.php");
                 <textarea name="address" id="address"></textarea>
                 <br><br>
                 <input type="submit" value="Submit Order">
-                <a href="index.php">Continue Shopping</a>
+                <a href="../index.php">Continue Shopping</a>
             </form>
         </div>
     </div>

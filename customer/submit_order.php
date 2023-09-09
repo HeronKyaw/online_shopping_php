@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include("admin/confs/config.php");
+    include("../confs/config.php");
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -27,13 +27,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submitted Order</title>
-    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="../resources/style/main.css">
 </head>
 <body>
     <h1>Order Submitted</h1>
     <div class="msg">
         Your order has been submitted. We'll deliver the items soon.
-        <a href="index.php" class="back">Online Shop Home</a>
+        <a href="../index.php" class="back">Online Shop Home</a>
     </div>
     <footer class="footer">
         &copy; <?php echo date("Y") ?>. All right reserved.

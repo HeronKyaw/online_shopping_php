@@ -28,7 +28,7 @@
         <select name="category_id" id="category_id">
             <option value="0">-- Choose --</option>
             <?php
-                include("../confs/config.php");
+                include("../../confs/config.php");
                 $sql = "SELECT id, name FROM tbl_category";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)) {
