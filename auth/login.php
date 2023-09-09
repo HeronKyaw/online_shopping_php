@@ -6,6 +6,5 @@
         $_SESSION['auth'] = true;
         header("location: ../welcomeadmin.php");
     } else {
-        header("location: ../index.php?login=failed");
+        header("location: ../index.php");
     }
-?>
