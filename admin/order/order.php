@@ -51,7 +51,7 @@ $order_data = mysqli_query($conn, "SELECT * FROM tbl_orders");
                                             while ($items = mysqli_fetch_assoc($order_item)) {
                                             ?>
                                                 <b>
-                                                    <a href="../item/item_detail.php?id=<?php echo $items['id'] ?>">
+                                                    <a href="/admin/item/item_details.php?id=<?php echo $items['item_id'] ?>">
                                                         <?php echo $items['title'] ?>
                                                     </a>
                                                     (<?php echo $items['qty'] ?>)
