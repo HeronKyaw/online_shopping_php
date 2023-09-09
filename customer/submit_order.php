@@ -15,7 +15,7 @@
     $order_id = mysqli_insert_id($conn);
 
     foreach ($_SESSION['cart'] as $id => $qty) {
-        mysqli_query($conn, "INSERT INTO tbl_order_items (order_id, item_id, qty) VALUES ($id, $order_id, $qty)");
+        mysqli_query($conn, "INSERT INTO tbl_order_items (item_id, order_id, qty) VALUES ($id, $order_id, $qty)");
     }
 
     unset($_SESSION['cart']);

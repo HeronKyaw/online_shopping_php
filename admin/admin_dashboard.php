@@ -8,7 +8,7 @@ include("../confs/config.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Shop With Us</title>
     <link rel="stylesheet" href="../resources/style/main.css">
 </head>
 
@@ -22,11 +22,10 @@ include("../confs/config.php");
                     <?php include('../component/admin_nav_bar.php') ?>
                     <div class="px-10 pt-24">
                         <h1>Online Shop Administration</h1>
-                        <img src="../resources/image/welcome.png" alt="Welcome Image" width="1100" height="500">
+                        <img src="/resources/image/welcome.png" alt="Welcome Image" width="1100" height="500">
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
 </body>
