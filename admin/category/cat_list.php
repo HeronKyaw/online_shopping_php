@@ -16,7 +16,7 @@
         <div class="flex flex-col overflow-x-hidden">
             <div class="flex flex-row">
                 <?php include('../../component/admin_sidebar.php') ?>
-                <div class=" overflow-x-scroll w-full h-screen flex flex-col">
+                <div class=" overflow-x-scroll w-full h-screen flex flex-col bg-gray-50 dark:bg-gray-900 ">
                     <?php include('../../component/admin_nav_bar.php') ?>
                     <div class="px-10 pt-24">
                         <h1>Category List</h1>

@@ -1,7 +1,7 @@
 <?php
-include("../../confs/config.php");
-include("../../confs/auth.php");
-$order_data = mysqli_query($conn, "SELECT * FROM tbl_orders");
+    include("../../confs/config.php");
+    include("../../confs/auth.php");
+    $order_data = mysqli_query($conn, "SELECT * FROM tbl_orders");
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ $order_data = mysqli_query($conn, "SELECT * FROM tbl_orders");
         <div class="flex flex-col overflow-x-hidden">
             <div class="flex flex-row">
                 <?php include('../../component/admin_sidebar.php') ?>
-                <div class=" overflow-x-scroll w-full h-screen flex flex-col">
+                <div class=" overflow-x-scroll w-full h-screen flex flex-col bg-gray-50 dark:bg-gray-900 ">
                     <?php include('../../component/admin_nav_bar.php') ?>
                     <div class="px-10 pt-24">
                         <ul class="orders">
@@ -51,7 +51,7 @@ $order_data = mysqli_query($conn, "SELECT * FROM tbl_orders");
                                             while ($items = mysqli_fetch_assoc($order_item)) {
                                             ?>
                                                 <b>
-                                                    <a href="/admin/item/item_details.php?id=<?php echo $items['item_id'] ?>">
+                                                    <a href="/admin/item/item_details.php?id=<?php echo $items['item_id']?>&page=order">
                                                         <?php echo $items['title'] ?>
                                                     </a>
                                                     (<?php echo $items['qty'] ?>)
