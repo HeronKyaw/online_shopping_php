@@ -117,7 +117,7 @@
     </main>
     <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
+        document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('deleteButton').click();
         });
     </script>

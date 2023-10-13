@@ -97,3 +97,8 @@
 .signup-text {
     @apply font-medium text-primary-600 hover:underline dark:text-primary-500;
 }
+
+/* Sidebar */
+.active {
+    @apply bg-violet-500 text-white;
+}

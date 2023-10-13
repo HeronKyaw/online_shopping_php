@@ -12,7 +12,7 @@
     $expired_date = date('Y-m-d H:i:s', strtotime("+3 months", strtotime("now")));
 
     if($photo) {
-        move_uploaded_file($tmp, "../image/items/$photo");
+        move_uploaded_file($tmp, "../../storage/upload/$photo");
         $sql = "UPDATE tbl_item SET title='$title', photo='$photo', category_id='$category_id', brand='$brand' , review='$review', price='$price', reached_date=now(), expired_date='$expired_date' WHERE id='$id'";
     } else {
         $sql = "UPDATE tbl_item SET title='$title', category_id='$category_id', brand='$brand' , review='$review', price='$price', reached_date=now(), expired_date='$expired_date' WHERE id='$id'";
@@ -20,4 +20,3 @@
 
     mysqli_query($conn, $sql);
     header("location: item_list.php");
-?>

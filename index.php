@@ -38,13 +38,13 @@
         <div class="flex-1 px-2 h-full overflow-x-scroll">
             <ul class="items mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <?php while ($row = mysqli_fetch_assoc($items)) : ?>
-                    <?php !is_dir("storage/upload/{$row['photo']}") and file_exists("storage/upload/{$row['photo']}") ?>
+                    <?php !is_dir("/storage/upload/{$row['photo']}") and file_exists("/storage/upload/{$row['photo']}") ?>
                     <div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-                        <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="./customer/item_detail.php?id=<?php echo $row['id'] ?>">
-                            <img class="object-contain" src="storage/upload/<?php echo $row['photo'] ?>" alt="<?php echo $row['title'] ?>'s image" />
+                        <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="/customer/item_detail.php?id=<?php echo $row['id'] ?>">
+                            <img class="object-contain" src="/storage/upload/<?php echo $row['photo'] ?>" alt="<?php echo $row['title'] ?>'s image" />
                         </a>
                         <div class="mt-4 px-5 pb-5">
-                            <a href="./customer/item_detail.php?id=<?php echo $row['id'] ?>">
+                            <a href="/customer/item_detail.php?id=<?php echo $row['id'] ?>">
                                 <h5 class="text-lg tracking-tight text-slate-900"><?php echo $row['title'] ?></h5>
                             </a>
                             <p class="mt-1 text-sm text-slate-400"><?php echo $row['brand'] ?></p>
@@ -53,7 +53,7 @@
                                     <span class="text-3xl font-bold text-slate-900">$<?php echo $row['price'] ?></span>
                                 </p>
                             </div>
-                            <a href="./customer/add_to_cart.php?id=<?php echo $row['id'] ?>" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700">
+                            <a href="/customer/add_to_cart.php?id=<?php echo $row['id'] ?>" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
@@ -66,6 +66,5 @@
             </ul>
         </div>
     </main>
-    <!-- <?php include ('component/footer.php');?> -->
 </body>
 </html>
