@@ -1,3 +1,9 @@
+<?php
+    include("../confs/config.php");
+    $id = $_GET['id'];
+    $item = mysqli_query($conn, "SELECT * FROM tbl_item WHERE id = $id");
+    $row = mysqli_fetch_assoc($item);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +13,12 @@
     <link rel="stylesheet" href="../resources/style/main.css">
 </head>
 <body>
-    <h1>Item Details</h1>
-    <?php
-        include("../confs/config.php");
-        $id = $_GET['id'];
-        $item = mysqli_query($conn, "SELECT * FROM tbl_item WHERE id = $id");
-        $row = mysqli_fetch_assoc($item);
-    ?>
-    <div class="detail">
+    <nav class="nav-bar">
         <a href="../index.php" class="back">Back</a>
+        <h1>Item Details</h1>
+        <p>Add to wish list</p>
+    </nav>
+    <div class="detail">
         <img src="../storage/upload/<?php echo $row['photo']?>" alt="<?php echo $row['title']?>'s Image" width="300" height="200">
         <h2><?php echo $row['title']?></h2>
         <i>by <?php echo $row['brand']?></i>

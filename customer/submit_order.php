@@ -4,11 +4,11 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $visa = $_POST['visa'];
+    $card = $_POST['card-no'];
     $address = $_POST['address'];
     $received = date("Y-m-d H:i:s", strtotime("+7days", strtotime('now')));
 
-    $sql = "INSERT INTO tbl_orders (name, email, phone, visa_card, address, status, ordered_date, received_date) VALUES ('$name', '$email', '$phone', '$visa', '$address', 0, now(), '$received')";
+    $sql = "INSERT INTO tbl_orders (name, email, phone, visa_card, address, status, ordered_date, received_date) VALUES ('$name', '$email', '$phone', '$card', '$address', 0, now(), '$received')";
 
     mysqli_query($conn, $sql);
 

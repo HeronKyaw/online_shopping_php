@@ -16,5 +16,4 @@
         $_SESSION['cart'][$id] = 1;
     }
 
-//    $_SESSION['cart'][$id]++;
     header("location: ../index.php");

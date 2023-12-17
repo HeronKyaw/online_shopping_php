@@ -1,6 +1,6 @@
 <?php
-include("./confs/config.php");
-$cats = mysqli_query($conn, "SELECT * FROM tbl_category ORDER BY name");
+    include("./confs/config.php");
+    $cats = mysqli_query($conn, "SELECT * FROM tbl_category ORDER BY name");
 ?>
 
 <aside id="default-sidebar" class="sidebar z-40 pt-4 w-64 transition-transform bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
@@ -21,3 +21,14 @@ $cats = mysqli_query($conn, "SELECT * FROM tbl_category ORDER BY name");
         </ul>
     </div>
 </aside>
+
+<script>
+    <?php
+        if (isset($_GET['cat'])) {
+            $cat_id = $_GET['cat'];
+            echo "document.querySelector(`a[href='index.php?cat=$cat_id']`).classList.add('bg-gray-100', 'dark:bg-gray-700')";
+        } else {
+            echo "document.querySelector(`a[href='index.php']`).classList.add('bg-gray-100', 'dark:bg-gray-700')";
+        }
+    ?>
+</script>
