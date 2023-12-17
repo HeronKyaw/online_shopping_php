@@ -56,7 +56,7 @@
         </ul>
         <ul>
             <li>
-                <a href="/auth/logout.php" class="flex items-center p-2  bg-red-600 text-gray-900 rounded-lg dark:text-white hover:bg-red-500 dark:hover:bg-gray-700 group">
+                <a href="/auth/logout.php" class="flex items-center p-2 bg-red-600 text-gray-900 rounded-lg dark:text-white hover:bg-red-500 dark:hover:bg-gray-700 group">
                     <div class="flex items-center max-h-[32px]">
                         <div class=" flex flex-row items-center justify-between  px-5 py-2.5 text-white text-sm h-full rounded-lg">
                             <svg class="w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
