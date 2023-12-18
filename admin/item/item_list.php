@@ -89,11 +89,9 @@
                                                                 echo $item_id
                                                             ?>
                                                         </th>
-                                                        <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                            <a href="item_details.php?id=<?php echo $row['id']?>&page=item" class="flex items-center">
-                                                                <img src="/storage/upload/<?php echo $row['photo'] ?>" alt="item's image" class="w-auto h-8 mr-3">
-                                                                <?php echo $row['title'] ?>
-                                                            </a>
+                                                        <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap flex items-center">
+                                                            <img src="/storage/upload/<?php echo $row['photo'] ?>" alt="item's image" class="w-auto h-8 mr-3">
+                                                            <?php echo $row['title'] ?>
                                                         </th>
                                                         <td class="px-4 py-3">
                                                             <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">
