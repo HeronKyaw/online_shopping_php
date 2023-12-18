@@ -1,7 +1,9 @@
 <?php
     $current_page = basename($_SERVER['PHP_SELF']);
-    $order_data = mysqli_query($conn, "SELECT * FROM tbl_orders");
-    $total_order = mysqli_num_rows($order_data);
+
+    // Get the count of undelivered orders
+    $undelivered_order_data = mysqli_query($conn, "SELECT COUNT(*) as undelivered_count FROM tbl_orders WHERE status = 0");
+    $undelivered_count = mysqli_fetch_assoc($undelivered_order_data)['undelivered_count'];
 ?>
 
 
@@ -46,9 +48,9 @@
                         <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z" />
                     </svg>
                     <span class="flex-1 ml-3 whitespace-nowrap">Manage Orders</span>
-                    <?php if ($total_order != "0") : ?>
+                    <?php if ($undelivered_count != "0") : ?>
                         <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                            <?php echo $total_order ?>
+                            <?php echo $undelivered_count ?>
                         </span>
                     <?php endif ?>
                 </a>

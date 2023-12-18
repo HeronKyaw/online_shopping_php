@@ -29,14 +29,12 @@
     <title>Submitted Order</title>
     <link rel="stylesheet" href="../resources/style/main.css">
 </head>
-<body>
-    <h1>Order Submitted</h1>
-    <div class="msg">
-        Your order has been submitted. We'll deliver the items soon.
-        <a href="../index.php" class="back">Online Shop Home</a>
+<body class="h-screen flex flex-col justify-center">
+    <div>
+        <h1 class="text-3xl text-center mb-4">Your order has been submitted!</h1>
+        <div class="flex justify-center">
+            <a href="../index.php" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">Continue Shopping</a>
+        </div>
     </div>
-    <footer class="footer">
-        &copy; <?php echo date("Y") ?>. All right reserved.
-    </footer>
 </body>
 </html>

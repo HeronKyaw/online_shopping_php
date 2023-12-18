@@ -25,21 +25,7 @@
                     <div class="px-10 pt-24">
                         <ul class="orders">
                             <?php while ($orders = mysqli_fetch_assoc($order_data)) { ?>
-                                    <li class="<?php echo $orders['status'] ? 'bg-teal-100' : ''?> border mb-3 px-10 py-4 rounded-md bg-gray-200">
-<!--                                        <div class="items">-->
-<!--                                            --><?php
-//                                                $order_id = $orders['id'];
-//                                                $order_item = mysqli_query($conn, "SELECT tbl_order_items.*, tbl_item.title FROM tbl_order_items LEFT JOIN tbl_item ON tbl_order_items.item_id = tbl_item.id WHERE tbl_order_items.order_id = $order_id") or die(mysqli_error($conn));
-//                                                while ($items = mysqli_fetch_assoc($order_item)) {
-//                                            ?>
-<!--                                                <b>-->
-<!--                                                    <a href="/admin/item/item_details.php?id=--><?php //echo $items['item_id']?><!--&page=order">-->
-<!--                                                        --><?php //echo $items['title'] ?>
-<!--                                                    </a>-->
-<!--                                                    (--><?php //echo $items['qty'] ?><!--)-->
-<!--                                                </b>-->
-<!--                                            --><?php //} ?>
-<!--                                        </div>-->
+                                <li class="<?php echo $orders['status'] ? 'bg-teal-100' : ''?> border mb-3 px-10 py-4 rounded-md bg-gray-200">
                                     <div class="flex flex-col">
                                         <div class="flex flex-row justify-between items-center">
                                             <div class="flex flex-col">
