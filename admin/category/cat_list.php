@@ -85,7 +85,7 @@
                                                             </a>
                                                         </th>
                                                         <td class="px-4 py-3">
-                                                            <span class="<?php echo $row['status'] == 1 ? "bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300" : " bg-red-200 text-red-800 dark:bg-red-900 dark:text-red-300" ?>  text-xs font-medium px-2 py-0.5 rounded">
+                                                            <span class="<?php echo $row['status'] == 1 ? "bg-green-200 text-green-800 " : " bg-red-200 text-red-800" ?>  text-xs font-medium px-2 py-0.5 rounded">
                                                                 <?php echo $row['status'] == 1 ? 'active' : 'inactive' ?>
                                                             </span>
                                                         </td>
