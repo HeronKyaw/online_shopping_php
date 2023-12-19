@@ -13,9 +13,9 @@
     #Browse by Category
     if (isset($_GET['cat'])) {
         $cat_id = $_GET['cat'];
-        $items = mysqli_query($conn, "SELECT * FROM tbl_item WHERE category_id = $cat_id");
+        $items = mysqli_query($conn, "SELECT tbl_item.* FROM tbl_item LEFT JOIN tbl_category tc on tbl_item.category_id = tc.id WHERE tc.status = 1 AND tbl_item.category_id = $cat_id");
     } else {
-        $items = mysqli_query($conn, "SELECT * FROM tbl_item");
+        $items = mysqli_query($conn, "SELECT tbl_item.* FROM tbl_item LEFT JOIN tbl_category tc on tbl_item.category_id = tc.id WHERE tc.status = 1");
     }
 
     $isLogin = isset($_SESSION['auth']);

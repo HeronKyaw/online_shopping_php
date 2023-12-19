@@ -18,8 +18,15 @@
                     <?php include('../../component/admin_nav_bar.php') ?>
                     <div class="px-10 pt-8">
                         <div class="max-w-4xl px-4 mx-auto lg:py-16">
-                            <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">New Category</h2>
+                            <div class="flex flex-row justify-between items-center mb-4">
+                                <h2 class="text-xl font-bold text-gray-900 dark:text-white">New Category</h2>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="statusSwitch" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-red-500 peer-focus:outline-none peer-focus:ring-0 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-red-600 after:border after:rounded-full after:w-5 after:h-5 after:transition-all peer-checked:bg-emerald-600"></div>
+                                </label>
+                            </div>
                             <form action="cat_add.php" method="POST">
+                                <input type="hidden" id="statusInput" name="status" value="1">
                                 <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
                                     <div class="sm:col-span-2">
                                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category Name</label>
@@ -45,5 +52,15 @@
             </div>
         </div>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const statusSwitch = document.getElementById('statusSwitch');
+            const statusInput = document.getElementById('statusInput');
+
+            statusSwitch.addEventListener('change', function () {
+                statusInput.value = statusSwitch.checked ? '1' : '0';
+            });
+        });
+    </script>
 </body>
 </html>
