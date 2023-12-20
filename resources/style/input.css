@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .nav-bar {
-    @apply p-4 flex justify-between items-center bg-slate-200;
+    @apply bg-white w-full z-20 top-0 left-0 border-b border-gray-200;
 }
 .nav-btn {
     @apply flex justify-between;
@@ -101,4 +101,8 @@
 /* Sidebar */
 .active {
     @apply bg-violet-500 text-white;
+}
+
+.detail {
+    @apply flex flex-row items-start justify-around w-[40rem] mx-auto my-10;
 }
