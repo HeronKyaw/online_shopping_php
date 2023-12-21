@@ -1,6 +1,6 @@
 <?php
     include("./confs/config.php");
-    $cats = mysqli_query($conn, "SELECT * FROM tbl_category ORDER BY name");
+    $cats = mysqli_query($conn, "SELECT * FROM tbl_category WHERE status = 1 ORDER BY name");
 ?>
 
 <aside id="default-sidebar" class="sidebar z-40 pt-4 w-64 transition-transform bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
