@@ -56,6 +56,7 @@ CREATE TABLE `tbl_item` (
   `brand` varchar(255) DEFAULT NULL,
   `review` varchar(255) DEFAULT NULL,
   `price` int DEFAULT NULL,
+  `stock` int DEFAULT NULL,
   `photo` varchar(255) DEFAULT NULL,
   `category_id` int DEFAULT NULL,
   `reached_date` datetime DEFAULT NULL,

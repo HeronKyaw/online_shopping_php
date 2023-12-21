@@ -16,6 +16,7 @@
 
     foreach ($_SESSION['cart'] as $id => $qty) {
         mysqli_query($conn, "INSERT INTO tbl_order_items (item_id, order_id, qty) VALUES ($id, $order_id, $qty)");
+        mysqli_query($conn, "UPDATE tbl_item SET stock = stock - $qty WHERE id = $id");
     }
 
     unset($_SESSION['cart']);

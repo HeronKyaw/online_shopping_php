@@ -14,7 +14,6 @@
     $cat_result = mysqli_query($conn, $cat_query);
 
     $total_items = mysqli_num_rows($result);
-    $total_orders = 0;
     $item_id = 0;
 ?>
 <!DOCTYPE html>
@@ -39,13 +38,7 @@
                         <section class="sm:py-5">
                             <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
                                 <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-                                    <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
-                                        <div class="flex items-center flex-1 space-x-4">
-                                            <h5>
-                                                <span class="text-gray-500">All Products:</span>
-                                                <span class="dark:text-white"><?php echo $total_items ?></span>
-                                            </h5>
-                                        </div>
+                                    <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-end lg:space-y-0 lg:space-x-4">
                                         <div class="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
                                             <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg md:w-auto focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
                                                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-4 h-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
@@ -73,7 +66,7 @@
                                                 <th scope="col" class="px-4 py-3">Category</th>
                                                 <th scope="col" class="px-4 py-3">Brand</th>
                                                 <th scope="col" class="px-4 py-3">Price</th>
-                                                <th scope="col" class="px-4 py-3">Order (qty)</th>
+                                                <th scope="col" class="px-4 py-3">Stock</th>
                                                 <th scope="col" class="px-4 py-3">Edit</th>
                                             </tr>
                                             </thead>
@@ -107,14 +100,7 @@
                                                             $<?php echo $row['price'] ?>
                                                         </td>
                                                         <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                            <?php
-                                                                if (is_null($row['total_qty'])) {
-                                                                    echo 0;
-                                                                } else {
-                                                                    $total_orders += $row['total_qty'];
-                                                                    echo $row['total_qty'];
-                                                                }
-                                                            ?>
+                                                            <?php echo $row['stock'] ?>
                                                         </td>
                                                         <td class="px-4  font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                             <a href="/admin/item/item_edit.php?id=<?php echo $row['id'] ?>"  class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
@@ -137,9 +123,9 @@
                                     </div>
                                     <nav class="flex flex-col md:flex-row justify-end items-center md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
                                         <p class="text-sm">
-                                            <span class="font-normal text-gray-500 dark:text-gray-400">Total orders:</span>
+                                            <span class="font-normal text-gray-500 dark:text-gray-400">Total items:</span>
                                             <span class="font-semibold text-gray-900 dark:text-white">
-                                                <?php echo $total_orders; ?>
+                                                <?php echo $total_items ?>
                                             </span>
                                         </p>
                                     </nav>

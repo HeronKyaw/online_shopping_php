@@ -14,7 +14,7 @@
 </head>
 
 <body class="h-screen">
-    <div class="nav-bar">
+    <div class="nav-bar flex flex-row justify-between p-4">
         <a href="../index.php">&laquo; Continue Shopping</a>
         <h1 class=" font-bold">View Cart</h1>
         <a href="./clear_cart.php" class="del">&times; Clear Cart</a>
