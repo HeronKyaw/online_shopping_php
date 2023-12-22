@@ -1,12 +1,21 @@
 <?php
+    include("../confs/config.php");
     session_start();
     $id = $_GET['id'];
     $method = $_GET['method'];
 
+    $query = "SELECT stock FROM tbl_item WHERE id = $id";
+    $result = mysqli_query($conn, $query);
+    $stock = mysqli_fetch_assoc($result)['stock'];
+
     if (isset($_SESSION['cart'])) {
         $item =& $_SESSION['cart'][$id];
         if ($method == 'increase') {
-            $item++;
+            if ($item < $stock) {
+                $item++;
+            } else {
+                $_SESSION['alert'] = "Stock is not enough!";;
+            }
         } else if ($method == 'decrease') {
             if ($item > 1) {
                 $item--;

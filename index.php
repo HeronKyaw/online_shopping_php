@@ -10,6 +10,11 @@
         }
     }
 
+    if (isset($_SESSION['alert'])) {
+        echo "<script>alert('{$_SESSION['alert']}')</script>";
+        unset($_SESSION['alert']);
+    }
+
     #Browse by Category
     if (isset($_GET['cat'])) {
         $cat_id = $_GET['cat'];
@@ -80,5 +85,6 @@
             <?php } ?>
         </div>
     </main>
+    <script src="/resources/script/main.js"></script>
 </body>
 </html>

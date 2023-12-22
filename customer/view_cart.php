@@ -1,6 +1,11 @@
 <?php
     session_start();
     include("../confs/config.php");
+
+    if (isset($_SESSION['alert'])) {
+        echo "<script>alert('{$_SESSION['alert']}')</script>";
+        unset($_SESSION['alert']);
+    }
 ?>
 
 <!DOCTYPE html>

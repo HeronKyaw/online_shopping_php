@@ -64,13 +64,14 @@
                         </div>
                         <button type="submit" class="sign-in-form-btn">Sign in</button>
                         <p class="signup-action">
-                            Don’t have an account yet? <a href="#" class="signup-text">Sign up</a>
+                            Don’t have an account yet? <a href="#" onclick="signUpAlert();" class="signup-text">Sign up</a>
                         </p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    <script src="../resources/script/main.js"></script>
 </body>
 
 </html>
