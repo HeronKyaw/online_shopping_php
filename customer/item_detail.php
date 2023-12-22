@@ -48,11 +48,13 @@ $isLogin = isset($_SESSION['auth']);
                     </a>
                 </div>
             </div>
-        <?php endif; ?>
+        <?php endif; ?> 
     </nav>
     <main class="container mx-auto p-6 md:p-12">
         <div class="border text-card-foreground shadow-sm md:flex bg-white rounded-lg p-6" data-v0-t="card">
-            <div class="md:w-1/2"><img src="../storage/upload/<?php echo $row['photo']?>" alt="<?php echo $row['title']?>'s Image" class="w-full h-full object-cover rounded-lg" width="500" height="500" style="aspect-ratio: 500 / 500; object-fit: cover;"></div>
+            <div class="md:w-1/2">
+                <img src="../storage/upload/<?php echo $row['photo']?>" alt="<?php echo $row['title']?>'s Image" class="w-full h-full rounded-lg" width="500" height="500" style="aspect-ratio: 500 / 500; object-fit: scale-down;">
+            </div>
             <div class="mt-4 md:mt-0 md:w-1/2 px-4">
                 <div class="flex flex-col space-y-1.5 p-6">
                     <h2 class="text-xl md:text-2xl font-bold mb-2"><?php echo $row['title']?></h2>
@@ -64,12 +66,18 @@ $isLogin = isset($_SESSION['auth']);
                         <?php echo $row['review']?>
                     </p>
                     <div class="mt-8">
-                        <a href="<?php echo $isLogin ? '/customer/add_to_cart.php?id=' . $row['id'] : '/admin/index.php'; ?>" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                            Add to cart
-                        </a>
+                        <?php if ($row['stock'] > 0) : ?>
+                            <a href="<?php echo $isLogin ? '/customer/add_to_cart.php?id=' . $row['id'] : '/admin/index.php'; ?>" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Add to cart
+                            </a>
+                        <?php else: ?>
+                            <a href="#" class="flex items-center justify-center rounded-md bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800">
+                                Out of stock
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

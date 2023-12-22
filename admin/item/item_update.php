@@ -6,6 +6,7 @@
     $brand = $_POST['brand'];
     $review = $_POST['review'];
     $price = $_POST['price'];
+    $stock = $_POST['stock'];
     $category_id = $_POST['category_id'];
     $photo = $_FILES['photo']['name'];
     $tmp = $_FILES['photo']['tmp_name'];
@@ -13,9 +14,9 @@
 
     if($photo) {
         move_uploaded_file($tmp, "../../storage/upload/$photo");
-        $sql = "UPDATE tbl_item SET title='$title', photo='$photo', category_id='$category_id', brand='$brand' , review='$review', price='$price', reached_date=now(), expired_date='$expired_date' WHERE id='$id'";
+        $sql = "UPDATE tbl_item SET title='$title', photo='$photo', category_id='$category_id', brand='$brand', stock='$stock', review='$review', price='$price', reached_date=now(), expired_date='$expired_date' WHERE id='$id'";
     } else {
-        $sql = "UPDATE tbl_item SET title='$title', category_id='$category_id', brand='$brand' , review='$review', price='$price', reached_date=now(), expired_date='$expired_date' WHERE id='$id'";
+        $sql = "UPDATE tbl_item SET title='$title', category_id='$category_id', brand='$brand', stock='$stock', review='$review', price='$price', reached_date=now(), expired_date='$expired_date' WHERE id='$id'";
     }
 
     mysqli_query($conn, $sql);

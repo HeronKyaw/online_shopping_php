@@ -66,7 +66,7 @@
                                                 <th scope="col" class="px-4 py-3">Category</th>
                                                 <th scope="col" class="px-4 py-3">Brand</th>
                                                 <th scope="col" class="px-4 py-3">Price</th>
-                                                <th scope="col" class="px-4 py-3">Stock</th>
+                                                <th scope="col" class="px-4 py-3 text-center">Stock</th>
                                                 <th scope="col" class="px-4 py-3">Edit</th>
                                             </tr>
                                             </thead>
@@ -99,8 +99,14 @@
                                                         <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                             $<?php echo $row['price'] ?>
                                                         </td>
-                                                        <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                            <?php echo $row['stock'] ?>
+                                                        <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
+                                                            <?php if ($row['stock'] == 0) : ?>
+                                                                <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
+                                                                    Out of stock
+                                                                </span>
+                                                            <?php else : ?>
+                                                                <?php echo $row['stock'] ?>
+                                                            <?php endif ?>
                                                         </td>
                                                         <td class="px-4  font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                             <a href="/admin/item/item_edit.php?id=<?php echo $row['id'] ?>"  class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">

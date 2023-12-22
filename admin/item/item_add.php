@@ -5,6 +5,7 @@
     $brand = $_POST['brand'];
     $review = $_POST['review'];
     $price = $_POST['price'];
+    $stock = $_POST['stock'];
     $category_id = $_POST['category_id'];
     $photo = $_FILES['photo']['name'];
     $tmp = $_FILES['photo']['tmp_name'];
@@ -14,7 +15,7 @@
         move_uploaded_file($tmp, "../../storage/upload/$photo");
     }
 
-    $sql = "INSERT INTO tbl_item (title, brand, review, price, photo, category_id, reached_date, expired_date) VALUES ('$title', '$brand', '$review', '$price', '$photo', '$category_id', now(), '$expired_date')";
+    $sql = "INSERT INTO tbl_item (title, brand, review, price, stock, photo, category_id, reached_date, expired_date) VALUES ('$title', '$brand', '$review', '$price', '$stock', '$photo', '$category_id', now(), '$expired_date')";
     mysqli_query($conn, $sql);
     header("location: item_list.php");
 ?>
