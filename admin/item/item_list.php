@@ -27,7 +27,6 @@
 </head>
 
 <body class="h-screen max-h-screen">
-
     <main class="h-full">
         <div class="flex flex-col overflow-x-hidden">
             <div class="flex flex-row">
