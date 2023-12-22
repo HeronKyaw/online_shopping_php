@@ -65,7 +65,8 @@
                                                 <th scope="col" class="px-4 py-3">Category</th>
                                                 <th scope="col" class="px-4 py-3">Brand</th>
                                                 <th scope="col" class="px-4 py-3">Price</th>
-                                                <th scope="col" class="px-4 py-3 text-center">Stock</th>
+                                                <th scope="col" class="px-4 py-3">Stock (qty)</th>
+                                                <th scope="col" class="px-4 py-3 text-center">Stock (status)</th>
                                                 <th scope="col" class="px-4 py-3">Edit</th>
                                             </tr>
                                             </thead>
@@ -98,13 +99,22 @@
                                                         <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                             $<?php echo $row['price'] ?>
                                                         </td>
+                                                        <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            <?php echo $row['stock'] ?>
+                                                        </td>
                                                         <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                                                             <?php if ($row['stock'] == 0) : ?>
                                                                 <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
                                                                     Out of stock
                                                                 </span>
+                                                            <?php elseif ($row['stock'] <= 20) : ?>
+                                                                <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-0.5 rounded">
+                                                                    Low Stock
+                                                                </span>
                                                             <?php else : ?>
-                                                                <?php echo $row['stock'] ?>
+                                                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                                                                    In Stock
+                                                                </span>
                                                             <?php endif ?>
                                                         </td>
                                                         <td class="px-4  font-medium text-gray-900 whitespace-nowrap dark:text-white">
