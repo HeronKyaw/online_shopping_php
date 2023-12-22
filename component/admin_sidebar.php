@@ -80,11 +80,11 @@
     <?php
         if (str_contains($current_page, 'admin_dashboard.php')) {
             echo "document.querySelector(`a[id='admin-sidebar-dashboard']`).classList.add('bg-gray-100', 'dark:bg-gray-700')";
-        } else if (str_contains($current_page, 'cat_list.php')) {
+        } else if (str_contains($current_page, 'cat')) {
             echo "document.querySelector(`a[href='/admin/category/cat_list.php']`).classList.add('bg-gray-100', 'dark:bg-gray-700')";
-        } else if (str_contains($current_page, 'item_list.php')) {
+        } else if (str_contains($current_page, 'item')) {
             echo "document.querySelector(`a[href='/admin/item/item_list.php']`).classList.add('bg-gray-100', 'dark:bg-gray-700')";
-        } else if (str_contains($current_page, 'order.php')) {
+        } else if (str_contains($current_page, 'order')) {
             echo "document.querySelector(`a[href='/admin/order/order.php']`).classList.add('bg-gray-100', 'dark:bg-gray-700')";
         }
     ?>
