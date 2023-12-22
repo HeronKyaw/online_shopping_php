@@ -28,7 +28,7 @@
                 <?php include('../../component/admin_sidebar.php') ?>
                 <div class=" overflow-x-scroll w-full h-screen flex flex-col bg-gray-50 dark:bg-gray-900 ">
                     <?php include('../../component/admin_nav_bar.php') ?>
-                    <div class="px-10 pt-24">
+                    <div class="px-10 pt-20">
                         <section class="sm:py-5">
                             <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
                                 <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">

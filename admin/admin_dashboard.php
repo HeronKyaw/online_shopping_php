@@ -1,6 +1,6 @@
 <?php
-include("../confs/auth.php");
-include("../confs/config.php");
+    include("../confs/auth.php");
+    include("../confs/config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
