@@ -13,11 +13,6 @@
         <div class="login-body">
             <div class="login-card">
                 <div class="login-card-body">
-                    <small>
-                        <a href="../index.php">
-                            << Back to Shopping 
-                        </a>
-                    </small>
                     <h1 class="login-title">
                         Sign in to your account
                     </h1>
@@ -45,7 +40,7 @@
                     <form class="login-form" action="../auth/login.php" method="POST">
                         <div>
                             <label for="nameOrEmail" class="input-title">Username (or) Email</label>
-                            <input type="nameOrEmail" name="nameOrEmail" id="nameOrEmail" class="input-field" placeholder="John Doe" required="">
+                            <input type="text" name="nameOrEmail" id="nameOrEmail" class="input-field" placeholder="John Doe" required="">
                         </div>
                         <div>
                             <label for="password" class="input-title">Password</label>
@@ -62,7 +57,10 @@
                             </div>
                             <a href="#" class="fg-psw">Forgot password?</a>
                         </div>
-                        <button type="submit" class="sign-in-form-btn">Sign in</button>
+                        <div class="flex flex-col gap-3">
+                            <button type="submit" class="sign-in-form-btn">Sign in</button>
+                            <a href="../index.php" class="flex items-center justify-center rounded-md bg-slate-500 px-4 py-2 text-center text-sm font-medium text-white hover:bg-slate-700">Back</a>
+                        </div>
                         <p class="signup-action">
                             Don’t have an account yet? <a href="#" onclick="signUpAlert();" class="signup-text">Sign up</a>
                         </p>
