@@ -2,7 +2,7 @@
     include("../confs/auth.php");
     include("../confs/config.php");
     
-    $best_seller_query = mysqli_query($conn, "SELECT i.id AS item_id, i.title AS item_title, i.brand AS item_brand, i.photo AS item_photo, c.name AS category_name, COUNT(oi.id) AS total_sales, SUM(i.price * oi.qty) AS total_price FROM tbl_item i JOIN tbl_order_items oi ON i.id = oi.item_id JOIN tbl_category c ON i.category_id = c.id GROUP BY i.id ORDER BY total_sales DESC LIMIT 1");
+    $best_seller_query = mysqli_query($conn, "SELECT i.id AS item_id, i.title AS item_title, i.brand AS item_brand, i.photo AS item_photo, c.name AS category_name, SUM(oi.qty) AS total_sales, SUM(i.price * oi.qty) AS total_price FROM tbl_item i JOIN tbl_order_items oi ON i.id = oi.item_id JOIN tbl_category c ON i.category_id = c.id GROUP BY i.id, i.title, i.brand, i.photo, c.name ORDER BY total_sales DESC LIMIT 1;");
 
     $query = mysqli_query($conn, "SELECT COUNT(*) as total_count, SUM(status=0) as to_deliver_count, SUM(status=1) as delivered_count FROM tbl_orders");
 
