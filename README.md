@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.5-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Online Shopping Web App using php - Student Project
+> E-Commerce Web App using php - Student Project
 
 ## Install
 
